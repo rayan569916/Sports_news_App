@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
 import { Dashboard } from './features/dashboard/dashboard.component';
-import { App } from './app';
+import { NbaDashboardComponent } from './features/nba.dashboard.component/nba.dashboard.component';
 
 export const routes: Routes = [
-    { path: '', component: App },
-    {path: 'dashboard', component: Dashboard}
+    { path:'',redirectTo: 'dashboard', pathMatch: 'full'},
+    { path: 'dashboard', component: Dashboard },
+    { path: 'nbaDashboard', component: NbaDashboardComponent }
 ];

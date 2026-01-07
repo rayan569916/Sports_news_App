@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,11 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class Nba {
   private baseUrl =
-    'https://api.allorigins.win/raw?url=https://api.balldontlie.io/v2';
+    'https://api.balldontlie.io';
+
+  private authToken="b096bbb1-b477-4fa7-a194-21304fbaeeaa";
+
+  private header = new HttpHeaders({
+    'Authorization':this.authToken
+  })
 
   constructor(private http: HttpClient) {}
 
   getPlayerDetails(): Observable<any>{
-    return this.http.get(`${this.baseUrl}/players`)
+    const headers=this.header
+    return this.http.get(`${this.baseUrl}/v1/players`,{ headers })
   }
 }
