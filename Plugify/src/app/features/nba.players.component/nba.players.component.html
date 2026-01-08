@@ -1,4 +1,4 @@
-<div class="navbar shadow-sm bg-primary bg-opacity-25">
+<div class="navbar sticky-top shadow-sm bg-primary bg-opacity-25">
     <div class="d-flex justify-content-end vw-100">
         <div class="position-relative" style="width: 20rem">
             <!-- Control -->
@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row g-4">
             @for(player of filterPlayerDetails; track player.playerId){
-            <div class="col-md-3">
+            <div class="col-md-3" (click)="loadPlayerDetail(player.playerId)">
                 <div class="card h-100 border-0 rounded-4 shadow-lg">
 
                     <div class="card-img-top p-4 rounded-top-4 bg-light">

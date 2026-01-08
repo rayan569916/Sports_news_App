@@ -3,23 +3,23 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nba.dashboard.component',
-  standalone: true, 
+  standalone: true,
   imports: [],
   templateUrl: './nba.dashboard.component.html',
   styleUrl: './nba.dashboard.component.css',
 })
 export class NbaDashboardComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
-  ngOnInit(){
+  ngOnInit() {
     // this.getPlayerDetails()
   }
 
-  loadNbaPlayers(){
-    this.router.navigate(['/nba/nbaPlayerDetail']);
+  loadNbaPlayers() {
+    this.router.navigate(['/nba/nbaPlayerList']);
   }
 
-  loadNbaTeams(){
+  loadNbaTeams() {
     this.router.navigate(['/nba/nbaTeamDetail']);
   }
 }
