@@ -39,8 +39,8 @@ export class NbaPlayersComponent implements OnInit{
     return this.playerTeam?.teamName ?? 'Free agent'
   }
 
-  loadPlayerDetail(playerId: number){
-    this.router.navigate(['nba/nbaPlayerList/',playerId]);
+  loadPlayerDetail(player: player){
+    this.router.navigate(['nba/nbaPlayerList/',player.playerId]);
   }
 
   getPlayerImage(player: any): string {

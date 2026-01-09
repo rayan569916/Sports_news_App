@@ -31,9 +31,9 @@ export class Nba {
     return this.http.get(`${this.wikipediaBaseUrl}/media-list/${encodeURIComponent(player)}`)
   }
 
-  getPlayerMobileSectionsFromWikipedia(player:string): Observable<any>{
-    return this.http.get(`${this.wikipediaBaseUrl}/mobile-sections/${encodeURIComponent(player)}`)
-  }
+  // getPlayerMobileSectionsFromWikipedia(player:string): Observable<any>{
+  //   return this.http.get(`${this.wikipediaBaseUrl}/html/${encodeURIComponent(player)}`)
+  // }
 }
 
 
