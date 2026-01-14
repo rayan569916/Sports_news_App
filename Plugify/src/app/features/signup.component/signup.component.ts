@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormBuilder,Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { passwordMatchValidator } from './password-match.validator'
+import { Nba } from '../../services/nba';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup.component',
@@ -13,7 +15,7 @@ export class SignupComponent implements OnInit{
 
   signUpGroup!:FormGroup;
 
-  constructor(private formBuilder:FormBuilder){}
+  constructor(private formBuilder:FormBuilder,private service: Nba,private router:Router){}
 
   ngOnInit(){
     this.buildForm();
@@ -37,6 +39,9 @@ export class SignupComponent implements OnInit{
       this.signUpGroup.markAllAsTouched();
       return;
     }
+    this.service.signupFlaskAPI({email:this.signUpGroup.get("email")?.value,password:this.signUpGroup.get("newPassword")?.value}).subscribe(res=>{
+      this.router.navigate(['/dashboard']);
+    })
   }
 
 }

@@ -9,6 +9,7 @@ import { config } from './config';
 export class Nba {
   private balldontlieBaseUrl =config.balldontlie;
   private wikipediaBaseUrl =config.wikipedia;
+  private apiBaseUrl=`${config.apiBaseUrl}/auth`;
 
   private authToken="b096bbb1-b477-4fa7-a194-21304fbaeeaa";
 
@@ -19,8 +20,8 @@ export class Nba {
   constructor(private http: HttpClient) {}
 
   getPlayerDetails(): Observable<any>{
-    const headers=this.balldontlieHeader
-    return this.http.get(`${this.balldontlieBaseUrl}/v1/players`,{ headers })
+    const headers=this.balldontlieHeader;
+    return this.http.get(`${this.balldontlieBaseUrl}/v1/players`,{ headers });
   }
 
   getPlayerSummaryFromWikipedia(player:string): Observable<any>{
@@ -28,13 +29,17 @@ export class Nba {
   }
 
   getPlayerMediaListFromWikipedia(player:string): Observable<any>{
-    return this.http.get(`${this.wikipediaBaseUrl}/media-list/${encodeURIComponent(player)}`)
+    return this.http.get(`${this.wikipediaBaseUrl}/media-list/${encodeURIComponent(player)}`);
   }
 
-  // getPlayerMobileSectionsFromWikipedia(player:string): Observable<any>{
-  //   return this.http.get(`${this.wikipediaBaseUrl}/html/${encodeURIComponent(player)}`)
-  // }
+  loginFlaskAPI(payload: {email:string,password:string}): Observable<any>{
+    return this.http.post(`${this.apiBaseUrl}/login`,payload);
+  }
+
+  signupFlaskAPI(payload:{email:string,password:string}): Observable<any>{
+    return this.http.post(`${this.apiBaseUrl}/signup`,payload);
+  }
 }
 
 
-// /media-list
+
