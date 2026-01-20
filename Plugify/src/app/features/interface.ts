@@ -48,3 +48,86 @@ export interface errorInterface {
     error: string,
     message: string
 }
+
+export interface NbaSummary {
+    day: {},
+    events: events[],
+    leagues: [],
+    provider: {},
+    season: {}
+}
+
+export interface events {
+    competitions: competitions[],
+    date: string,
+    links: [],
+    name: string,
+    season: {},
+    shortName: string,
+    status: {},
+    uid: string
+}
+
+export interface competitions {
+    attendance: number,
+    broadcast: string,
+    broadcasts: [],
+    competitors: competitors[],
+    conferenceCompetition: boolean,
+    date: string,
+    format: {}
+    geoBroadcasts: [],
+    headlines: [],
+    highlights: [],
+    id: string,
+    neutralSite: boolean,
+    notes: [],
+    playByPlayAvailable: boolean
+    recent: boolean,
+    startDate: string,
+    status: {},
+    timeValid: boolean,
+    type: {},
+    uid: string,
+    venue: {}
+}
+
+export interface competitors {
+    homeAway: string,
+    id: string,
+    leaders: [],
+    linescores: [],
+    order: number,
+    records: record[],
+    score: string,
+    statistics: [],
+    team: teams,
+    type: string,
+    uid: string,
+    winner: boolean
+}
+
+export interface record {
+    name: string,
+    summary: string,
+    type: string
+}
+
+export interface teams {
+    abbreviation: string,
+    alternateColor: string,
+    color: string,
+    displayName: string,
+    id: string,
+    isActive: boolean
+    links: []
+    location: string,
+    logo: string,
+    name: string,
+    shortDisplayName: string,
+    uid: string,
+    venue: {}
+    type: string,
+    winner: boolean
+}
+

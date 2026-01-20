@@ -1,0 +1,75 @@
+<div class="container-fluid min-vh-100 bg-light py-4">
+  <div class="container">
+
+    @for (event of nbaEvent; track event?.uid) {
+      <div class="card shadow-sm rounded-4 mb-4 p-3">
+
+        <!-- Match Title -->
+        <div class="text-center mb-3">
+          <h4 class="fw-bold mb-0">{{ event.name }}</h4>
+          <small class="text-muted">NBA</small>
+        </div>
+
+        <!-- Match Body -->
+        <div class="row align-items-center text-center">
+
+          <!-- Team 1 -->
+          <div class="col-md-4">
+            <small class="text-uppercase text-muted">
+              {{ event.competitions[0].competitors[0].homeAway }}
+            </small>
+
+            <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+              <img
+                [src]="event.competitions[0].competitors[0]?.team?.logo"
+                height="50"
+                alt="team logo"
+              />
+              <h6 class="fw-bold mb-0">
+                {{ event.competitions[0].competitors[0].team.displayName }}
+              </h6>
+            </div>
+
+            <small class="text-muted">
+              {{ event.competitions[0].competitors[0].records[1].summary }}
+            </small>
+          </div>
+
+          <!-- Score -->
+          <div class="col-md-4 my-3 my-md-0">
+            <small class="text-uppercase text-muted">Full Time</small>
+            <div class="fs-3 fw-bold">
+              {{ event.competitions[0].competitors[0].score }}
+              -
+              {{ event.competitions[0].competitors[1].score }}
+            </div>
+          </div>
+
+          <!-- Team 2 -->
+          <div class="col-md-4">
+            <small class="text-uppercase text-muted">
+              {{ event.competitions[0].competitors[1].homeAway }}
+            </small>
+
+            <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+              <img
+                [src]="event.competitions[0].competitors[1]?.team?.logo"
+                height="50"
+                alt="team logo"
+              />
+              <h6 class="fw-bold mb-0">
+                {{ event.competitions[0].competitors[1].team.displayName }}
+              </h6>
+            </div>
+
+            <small class="text-muted">
+              {{ event.competitions[0].competitors[1].records[1].summary }}
+            </small>
+          </div>
+
+        </div>
+      </div>
+    }
+
+  </div>
+</div>

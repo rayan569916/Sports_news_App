@@ -3,6 +3,7 @@ import { NbaPlayersComponent } from "./nba.players.component/nba.players.compone
 import { NbaTeamsComponent } from "./nba.teams.component/nba.teams.component";
 import {NbaPlayerDetailsComponent} from  './nba.players.component/nba.player.details.component/nba.player.details.component';
 import { Routes } from '@angular/router';
+import { NbaSheduleComponent } from "./nba.shedule.component/nba.shedule.component";
 
 
 
@@ -11,5 +12,6 @@ export const nbaRoutes:  Routes = [
     { path: 'nbaDashboard', component: NbaDashboardComponent },
     { path: 'nbaPlayerList', component: NbaPlayersComponent},
     { path:'nbaPlayerList/:playerId', component: NbaPlayerDetailsComponent},
-    { path: 'nbaTeamDetail', component: NbaTeamsComponent }
+    { path: 'nbaTeamDetail', component: NbaTeamsComponent },
+    { path: 'nbaSchedule', component: NbaSheduleComponent}
 ];
