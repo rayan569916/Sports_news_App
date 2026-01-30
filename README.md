@@ -33,4 +33,69 @@ A full-stack **Sports News Application** that provides users with the latest spo
 ---
 
 ## 🧠 Architecture
+Angular Frontend
+│
+▼
+Flask Backend API
+│
+▼
+External Sports News API
 
+
+The frontend sends requests to the Flask backend, which in turn fetches news from the external API and returns structured JSON data for display.
+
+---
+
+## 🚀 Features in Detail
+
+### 📰 Sports News Browsing
+Users can view a list of the latest sports news articles aggregated from a live news provider.
+
+### 🔍 Search & Filter
+Users can search for news by keywords, and filter results by category (e.g., football, basketball, cricket).
+
+### 📱 Responsive UI
+The UI adjusts for desktop and mobile screens for optimal viewing.
+
+---
+
+## 📁 Folder Structure
+/
+├── Angular-FrontEnd/
+│ ├── src/
+│ ├── angular.json
+│ └── package.json
+├── Flask-Backend/
+│ ├── app.py
+│ ├── routes/
+│ └── requirements.txt
+├── .gitignore
+└── README.md
+
+
+---
+
+## 📌 Getting Started
+
+### Requirements
+- Node.js 18+
+- Python 3.10+
+- Angular CLI
+
+### Setup Frontend
+cd Angular-FrontEnd
+npm install
+ng serve
+cd Flask-Backend
+pip install -r requirements.txt
+python app.py
+Visit http://localhost:4200 in your browser to view the app.
+
+💡 Future Enhancements
+• User authentication & favorites
+• Caching API results for performance
+• Category tabs (Football, Cricket, Basketball)
+• Bookmark articles
+
+📜 License
+This project is open-source — feel free to use and improve!
